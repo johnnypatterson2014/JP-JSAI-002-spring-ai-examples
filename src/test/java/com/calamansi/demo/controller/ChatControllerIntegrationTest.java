@@ -18,7 +18,7 @@ import com.calamansi.demo.Application;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, classes = Application.class)
 @AutoConfigureMockMvc
 @TestPropertySource(locations = "classpath:application.properties")
-public class ChatControllerTest {
+public class ChatControllerIntegrationTest {
 
 	@Autowired
 	private MockMvc mvc;

@@ -16,10 +16,6 @@ public class ChatService {
 		this.chatClient = builder.build();
 	}
 
-	public String getJoke(String message) {
-		return chatClient.prompt().user(message).call().content(); // short for getResult().getOutput().getContent();
-	}
-
 	public ChatResponse jokeWithResponse(String message) {
 		return chatClient.prompt().user(message).call().chatResponse();
 	}
