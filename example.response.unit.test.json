@@ -1,0 +1,80 @@
+{
+	"result": {
+		"metadata": {
+			"finishReason": "STOP",
+			"contentFilters": [],
+			"empty": true
+		},
+		"output": {
+			"messageType": "ASSISTANT",
+			"metadata": {
+				"finishReason": "STOP",
+				"refusal": "",
+				"index": 0,
+				"role": "ASSISTANT",
+				"id": "chatcmpl-BU73MddPH2H8GeddXdwh6wK6FRBMg",
+				"messageType": "ASSISTANT"
+			},
+			"toolCalls": [],
+			"media": [],
+			"text": "Why did the computer go to therapy?\n\nBecause it had too many bytes from its past!"
+		}
+	},
+	"metadata": {
+		"id": "chatcmpl-BU73MddPH2H8GeddXdwh6wK6FRBMg",
+		"model": "gpt-4o-mini-2024-07-18",
+		"rateLimit": {
+			"requestsLimit": 10000,
+			"requestsRemaining": 9999,
+			"tokensLimit": 200000,
+			"tokensRemaining": 199988,
+			"requestsReset": "PT1M4S",
+			"tokensReset": "PT0.003S"
+		},
+		"usage": {
+			"promptTokens": 14,
+			"completionTokens": 19,
+			"totalTokens": 33,
+			"nativeUsage": {
+				"completion_tokens": 19,
+				"prompt_tokens": 14,
+				"total_tokens": 33,
+				"prompt_tokens_details": {
+					"audio_tokens": 0,
+					"cached_tokens": 0
+				},
+				"completion_tokens_details": {
+					"reasoning_tokens": 0,
+					"accepted_prediction_tokens": 0,
+					"audio_tokens": 0,
+					"rejected_prediction_tokens": 0
+				}
+			}
+		},
+		"promptMetadata": [],
+		"empty": false
+	},
+	"results": [
+		{
+			"metadata": {
+				"finishReason": "STOP",
+				"contentFilters": [],
+				"empty": true
+			},
+			"output": {
+				"messageType": "ASSISTANT",
+				"metadata": {
+					"finishReason": "STOP",
+					"refusal": "",
+					"index": 0,
+					"role": "ASSISTANT",
+					"id": "chatcmpl-BU73MddPH2H8GeddXdwh6wK6FRBMg",
+					"messageType": "ASSISTANT"
+				},
+				"toolCalls": [],
+				"media": [],
+				"text": "Why did the computer go to therapy?\n\nBecause it had too many bytes from its past!"
+			}
+		}
+	]
+}
