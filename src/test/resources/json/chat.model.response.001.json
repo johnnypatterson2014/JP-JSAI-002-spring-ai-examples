@@ -1,0 +1,80 @@
+{
+	"result": {
+		"output": {
+			"messageType": "ASSISTANT",
+			"metadata": {
+				"refusal": "",
+				"finishReason": "STOP",
+				"index": 0,
+				"id": "chatcmpl-BU6zwZ0KP5Hc2Ou3mHaHwDinoUGnh",
+				"role": "ASSISTANT",
+				"messageType": "ASSISTANT"
+			},
+			"toolCalls": [],
+			"media": [],
+			"text": "Why don't computers ever get tired?\n\nBecause they have a great byte-size nap every time they go to sleep!"
+		},
+		"metadata": {
+			"finishReason": "STOP",
+			"contentFilters": [],
+			"empty": true
+		}
+	},
+	"metadata": {
+		"id": "chatcmpl-BU6zwZ0KP5Hc2Ou3mHaHwDinoUGnh",
+		"model": "gpt-4o-2024-08-06",
+		"rateLimit": {
+			"requestsLimit": 500,
+			"requestsRemaining": 499,
+			"tokensLimit": 30000,
+			"tokensRemaining": 29989,
+			"requestsReset": "PT0.12S",
+			"tokensReset": "PT0.022S"
+		},
+		"usage": {
+			"promptTokens": 14,
+			"completionTokens": 23,
+			"totalTokens": 37,
+			"nativeUsage": {
+				"completion_tokens": 23,
+				"prompt_tokens": 14,
+				"total_tokens": 37,
+				"prompt_tokens_details": {
+					"audio_tokens": 0,
+					"cached_tokens": 0
+				},
+				"completion_tokens_details": {
+					"reasoning_tokens": 0,
+					"accepted_prediction_tokens": 0,
+					"audio_tokens": 0,
+					"rejected_prediction_tokens": 0
+				}
+			}
+		},
+		"promptMetadata": [],
+		"empty": false
+	},
+	"results": [
+		{
+			"output": {
+				"messageType": "ASSISTANT",
+				"metadata": {
+					"refusal": "",
+					"finishReason": "STOP",
+					"index": 0,
+					"id": "chatcmpl-BU6zwZ0KP5Hc2Ou3mHaHwDinoUGnh",
+					"role": "ASSISTANT",
+					"messageType": "ASSISTANT"
+				},
+				"toolCalls": [],
+				"media": [],
+				"text": "Why don't computers ever get tired?\n\nBecause they have a great byte-size nap every time they go to sleep!"
+			},
+			"metadata": {
+				"finishReason": "STOP",
+				"contentFilters": [],
+				"empty": true
+			}
+		}
+	]
+}

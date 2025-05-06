@@ -26,8 +26,7 @@ public class ChatControllerIntegrationTest {
 	@Test
 	public void givenX_whenGetX_thenStatus200() throws Exception {
 		
-		ResultActions result = mvc.perform(get("/api/chat/jokes-with-response"));
-		
+		ResultActions result = mvc.perform(get("/api/chat/query"));
 		assertNotNull(result);
 
 //		mvc.perform(get("/api/survey?name=fred"))

@@ -1,23 +1,24 @@
 package com.calamansi.demo.service;
 
-import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.stereotype.Service;
 
-import lombok.RequiredArgsConstructor;
+import com.calamansi.demo.integration.OpenAiIntegration;
 
 @Service
-//@RequiredArgsConstructor
 public class ChatService {
 
-	private final ChatClient chatClient;
+	private final OpenAiIntegration openAiIntegration;
 
-	public ChatService(ChatClient.Builder builder) {
-		this.chatClient = builder.build();
+	public ChatService(OpenAiIntegration openAiIntegration) {
+		this.openAiIntegration = openAiIntegration;
 	}
 
-	public ChatResponse jokeWithResponse(String message) {
-		return chatClient.prompt().user(message).call().chatResponse();
+	public String queryLLM(String message) {
+		
+		String chatResponse = openAiIntegration.callLLM(message);
+		return chatResponse;
+		
 	}
 
 }

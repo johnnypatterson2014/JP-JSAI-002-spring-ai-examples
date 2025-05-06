@@ -21,14 +21,9 @@ public class ChatController {
 		this.chatService = chatService;
 	}
 
-    /**
-     * What if you didn't want to get a String back, and you wanted the whole response?
-     * @param message
-     * @return
-     */
-    @GetMapping("jokes-with-response")
-    public ChatResponse jokeWithResponse(@RequestParam(value = "message", defaultValue = "Tell me a dad joke about computers") String message) {
-    	return chatService.jokeWithResponse(message);
+    @GetMapping("query")
+    public String queryLLM(@RequestParam(value = "message", defaultValue = "Tell me a joke about computers") String message) {
+    	return chatService.queryLLM(message);
     }
     
 }
