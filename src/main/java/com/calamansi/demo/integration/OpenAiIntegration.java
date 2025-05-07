@@ -13,14 +13,17 @@ public class OpenAiIntegration {
 	public OpenAiIntegration(ChatClient.Builder builder) {
 		this.chatClient = builder.build();
 	}
-	
+
 	public String callLLM(String message) {
-		
 		CallResponseSpec callResponseSpec = chatClient.prompt().user(message).call();
 		ChatResponse response = callResponseSpec.chatResponse();
 		String responseString = response.getResult().getOutput().getText();
 		return responseString;
 	}
-	
-	
+
+	public ChatResponse callLLMWithChatResponse(String message) {
+		CallResponseSpec callResponseSpec = chatClient.prompt().user(message).call();
+		return callResponseSpec.chatResponse();
+	}
+
 }

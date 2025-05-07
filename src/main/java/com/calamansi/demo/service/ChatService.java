@@ -10,15 +10,17 @@ public class ChatService {
 
 	private final OpenAiIntegration openAiIntegration;
 
-	public ChatService(OpenAiIntegration openAiIntegration) {
+	public ChatService(final OpenAiIntegration openAiIntegration) {
 		this.openAiIntegration = openAiIntegration;
 	}
 
 	public String queryLLM(String message) {
-		
 		String chatResponse = openAiIntegration.callLLM(message);
 		return chatResponse;
-		
+	}
+	
+	public ChatResponse callLLMWithChatResponse(String message) {
+		return openAiIntegration.callLLMWithChatResponse(message);
 	}
 
 }

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Collections;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -33,37 +34,37 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.mockito.internal.matchers.Any;
 
 @SpringBootTest
-//@ExtendWith(SpringExtension.class)
 @Import(ApplicationTestConfig.class)
 public class ChatServiceTest {
 
-	@Autowired 
 	private ChatService chatService;
-	
-	@MockBean
+
 	private OpenAiIntegration openAiIntegration;
-	
+
 	@Value("classpath:json/chat.model.response.001.json")
 	Resource chatModelResponse_001;
-	
-	@Test
-	public void testing() {
-		
-		try {
-			ObjectMapper mapper = new ObjectMapper();
-			ChatResponseJson stubResponse = mapper.readValue(chatModelResponse_001.getFile(), ChatResponseJson.class);
-			String message = "tell me a joke";
-			
-			String stubResponseString = stubResponse.getResult().getOutput().getText();
-			Mockito.when(openAiIntegration.callLLM(message)).thenReturn(stubResponseString);
-			String response = chatService.queryLLM(message);
-			
-			assertEquals("Why don't computers ever get tired?\n\nBecause they have a great byte-size nap every time they go to sleep!", response);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+
+	@BeforeEach
+	public void setup() {
+		this.openAiIntegration = Mockito.mock(OpenAiIntegration.class);
+		this.chatService = new ChatService(openAiIntegration);
 	}
-	
+
+	@Test
+	public void testing() throws StreamReadException, DatabindException, IOException {
+
+		ObjectMapper mapper = new ObjectMapper();
+		ChatResponseJson stubResponse = mapper.readValue(chatModelResponse_001.getFile(), ChatResponseJson.class);
+		String message = "tell me a joke";
+
+		String stubResponseString = stubResponse.getResult().getOutput().getText();
+		Mockito.when(openAiIntegration.callLLM(message)).thenReturn(stubResponseString);
+		String response = chatService.queryLLM(message);
+
+		assertEquals(
+				"Why don't computers ever get tired?\n\nBecause they have a great byte-size nap every time they go to sleep!",
+				response);
+
+	}
+
 }
