@@ -1,0 +1,13 @@
+
+
+Follow and implement the following SpringAI example projects:
+  L:\_github.java.ref\spring-ai-workshop\README.md
+  L:\_github.java.ref\spring-ai-examples\spring-ai-rag-example\README.md
+  L:\_github.java.ref\spring-ai-examples2\agentic-patterns\README.md
+  L:\_github.java.ref\spring-ai-examples2\README.md
+  L:\_github.java.ref\spring-ai-examples2\agents\reflection\README.md
+
+
+
+
+
