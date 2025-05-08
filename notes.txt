@@ -28,3 +28,4 @@ http://localhost:8080/api/chat/vacation-structured
 git reset --soft HEAD~1
 
 
+http://localhost:8080/api/rag/models
