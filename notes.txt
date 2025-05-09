@@ -31,3 +31,6 @@ git reset --soft HEAD~1
 http://localhost:8080/api/rag/models
 
 http://localhost:8080/tools/tomorrow
+
+http://localhost:8080/image-to-text
+
