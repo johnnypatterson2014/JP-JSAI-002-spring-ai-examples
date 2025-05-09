@@ -15,7 +15,9 @@ public class RagController {
 	private final ChatClient chatClient;
 
 	public RagController(ChatClient.Builder builder, VectorStore vectorStore) {
-		this.chatClient = builder.defaultAdvisors(new QuestionAnswerAdvisor(vectorStore)).build();
+		this.chatClient = builder
+				.defaultAdvisors(new QuestionAnswerAdvisor(vectorStore))
+				.build();
 	}
 
 	@GetMapping("/models")
