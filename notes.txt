@@ -52,3 +52,30 @@ http://localhost:9091/
 
 login: admin T$GBzdUH3sWA8QFk
 
+
+
+------
+
+http://localhost:8080/actuator/configprops
+
+----------------
+
+
+http://localhost:8080/actuator              // spring boot actuator endpoints
+http://localhost:8080/actuator/prometheus   // metrics exposed for prometheus
+
+http://localhost:9411/zipkin/               // zipkin - trace performance of http api calls
+http://localhost:9411/zipkin/traces/08e218a363d5e0fe2df4452374038431
+
+http://localhost:3000/                      // graphana
+http://localhost:3000/d/spring_boot_21/spring-boot-3-x-statistics?orgId=1&from=now-1h&to=now&timezone=browser&var-application=&var-Namespace=&var-instance=host.docker.internal:8080&var-hikaricp=&var-memory_pool_heap=$__all&var-memory_pool_nonheap=$__all
+
+http://localhost:9090/metrics               // prometheus metrics
+http://localhost:9090/query?g0.expr=gen_ai_client_token_usage_total&g0.show_tree=0&g0.tab=table&g0.range_input=1h&g0.res_type=auto&g0.res_density=medium&g0.display_mode=lines&g0.show_exemplars=0
+
+
+
+
+
+
+
