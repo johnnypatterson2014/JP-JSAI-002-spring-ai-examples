@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.ai.reader.tika.TikaDocumentReader;
 import org.springframework.ai.transformer.splitter.TextSplitter;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
@@ -25,9 +27,8 @@ import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 
 @RestController
+@Slf4j
 public class RagPdfController {
-	
-	private static final Logger log = LoggerFactory.getLogger(RagPdfController.class);
 	
 	private final ChatClient chatClient;
 	

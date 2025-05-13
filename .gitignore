@@ -34,4 +34,4 @@ build/
 
 temp.txt
 /src/test/resources/application.properties
-
+logs/
