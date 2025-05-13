@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.calamansi.demo.model.Itinerary;
 import com.calamansi.demo.service.ChatService;
 
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 
 @RestController
 @RequestMapping("/api/chat")
+@Slf4j
 public class ChatController {
 
 	private final ChatService chatService;

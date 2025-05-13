@@ -6,9 +6,13 @@ import org.springframework.core.io.Resource;
 import org.springframework.util.MimeTypeUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.IOException;
 
 @RestController
+@Slf4j
 public class ImageDetectionController {
 
 	private final ChatClient chatClient;

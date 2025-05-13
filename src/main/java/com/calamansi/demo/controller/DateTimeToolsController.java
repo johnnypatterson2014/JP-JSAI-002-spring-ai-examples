@@ -6,8 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.calamansi.demo.tools.DateTimeTools;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("/tools")
+@Slf4j
 public class DateTimeToolsController {
 
 	private final ChatClient chatClient;

@@ -12,11 +12,14 @@ import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.stereotype.Component;
 
 import com.calamansi.demo.config.ApplicationConfig;
+import com.calamansi.demo.controller.ChatController;
 import com.calamansi.demo.model.Itinerary;
 
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 
 @Component
+@Slf4j
 public class OpenAiIntegration {
 	
 	private static final Logger log = LoggerFactory.getLogger(OpenAiIntegration.class);

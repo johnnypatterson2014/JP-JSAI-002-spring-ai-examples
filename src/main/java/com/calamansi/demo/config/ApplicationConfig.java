@@ -14,6 +14,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
+import com.calamansi.demo.controller.RagPdfController;
+
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -22,10 +26,9 @@ import java.util.List;
 
 
 @Configuration
+@Slf4j
 public class ApplicationConfig {
 	
-	private static final Logger log = LoggerFactory.getLogger(ApplicationConfig.class);
-
     @Value("vectorstore.json")
     private String vectorStoreName;
 
