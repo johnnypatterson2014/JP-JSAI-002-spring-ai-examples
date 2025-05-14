@@ -2,10 +2,21 @@
 
 Follow and implement the following SpringAI example projects:
   L:\_github.java.ref\spring-ai-workshop\README.md                            *** done
-  L:\_github.java.ref\spring-ai-examples\spring-ai-rag-example\README.md
+  L:\_github.java.ref\spring-ai-examples\spring-ai-rag-example\README.md      *** done
+  
   L:\_github.java.ref\spring-ai-examples2\agentic-patterns\README.md
+        - read article: https://www.anthropic.com/engineering/building-effective-agents
+        - Spring AI Model Portability (implement code to switch between different LLMs)
+        - chain workflow
+        - Parallelization Workflow
+        - Routing Workflow
+        - Orchestrator-Workers
+        - Evaluator-Optimizer
+        
   L:\_github.java.ref\spring-ai-examples2\README.md
-  L:\_github.java.ref\spring-ai-examples2\agents\reflection\README.md
+        - agentic patterns (see above)
+        - agents with critique/feedback for improvement: L:\_github.java.ref\spring-ai-examples2\agents\reflection\README.md
+  
 
 
 
