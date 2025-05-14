@@ -19,20 +19,9 @@
 		</http>
 		<format>
 			<label>
-				<pattern>app=${name},host=${HOSTNAME},level=%level</pattern>
-				<readMarkers>true</readMarkers>
+				<pattern>application=${spring.application.name},host=${HOSTNAME},level=%level</pattern>
 			</label>
-			<message>
-				<pattern>
-					{
-					"level":"%level",
-					"class":"%logger{36}",
-					"thread":"%thread",
-					"message": "%message",
-					"requestId": "%X{X-Request-ID}"
-					}
-				</pattern>
-			</message>
+			<pattern>${FILE_LOG_PATTERN}</pattern>
 		</format>
 	</appender>
 
@@ -57,15 +46,15 @@
 		</rollingPolicy>
 	</appender>
 
-	<!-- LOG everything at debug level -->
-	<root level="debug">
+	<!-- LOG everything at info level -->
+	<root level="info">
 		<appender-ref ref="RollingFile" />
 		<appender-ref ref="Console" />
 		<appender-ref ref="LOKI" />
 	</root>
 
-	<!-- LOG "com.calamansi*" at TRACE level -->
-	<logger name="com.calamansi" level="trace" additivity="false">
+	<!-- LOG "com.calamansi*" at debug level -->
+	<logger name="com.calamansi" level="debug" additivity="false">
 		<appender-ref ref="RollingFile" />
 		<appender-ref ref="Console" />
 		<appender-ref ref="LOKI" />

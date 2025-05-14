@@ -1,20 +1,29 @@
+
 services:
-  zipkin:
-    image: ghcr.io/openzipkin/zipkin-slim:${TAG:-latest}
-    container_name: zipkin
-    environment:
-      - STORAGE_TYPE=mem
-    ports:
-      - 9411:9411
+
   prometheus:
     image: prom/prometheus
     container_name: prometheus
+    restart: unless-stopped
     volumes:
       - "./prometheus.yml:/etc/prometheus/prometheus.yml"
     networks:
       - net
     ports:
       - 9090:9090
+      
+  tempo:
+    image: grafana/tempo
+    container_name: tempo
+    command: [ "-config.file=/etc/tempo.yaml" ]
+    volumes:
+      - "./tempo.yaml:/etc/tempo.yaml"
+    ports:
+      - "3200:3200" # Tempo
+      - "9411:9411" # zipkin
+    networks:
+      - net
+  
   grafana:
     image: grafana/grafana
     container_name: grafana
@@ -25,6 +34,7 @@ services:
       - grafana-storage:/var/lib/grafana
     networks:
       - net
+    
   loki:
     image: grafana/loki:latest
     container_name: loki
@@ -33,13 +43,7 @@ services:
     command: -config.file=/etc/loki/local-config.yaml
     networks:
       - net
-  promtail:
-    image: grafana/promtail:latest
-    container_name: promtail
-    volumes:
-      - "./promtail-config.yaml:/etc/promtail/promtail-config.yaml"
-    networks:
-      - net
+    
 volumes:
   grafana-storage: {}
 
