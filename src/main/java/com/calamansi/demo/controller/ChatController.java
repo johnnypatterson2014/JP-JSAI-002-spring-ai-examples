@@ -4,11 +4,16 @@ import java.util.List;
 
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.calamansi.demo.model.Answer;
 import com.calamansi.demo.model.Itinerary;
+import com.calamansi.demo.model.Question;
 import com.calamansi.demo.service.ChatService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -31,7 +36,10 @@ public class ChatController {
     }
 	
 	@GetMapping("query-with-response")
-    public ChatResponse queryLLMWithChatResponse(@RequestParam(value = "message", defaultValue = "Tell me a joke about computers") String message) {
+    public ChatResponse queryLLMWithChatResponse(
+    		@RequestParam(value = "message", defaultValue = "Tell me a joke about computers") String message,
+    		@RequestHeader(name="X_CONV_ID", defaultValue="defaultConversation") String conversationId) {
+		log.debug("X_CONV_ID is: " + conversationId);
     	return chatService.callLLMWithChatResponse(message);
     }
 	
@@ -40,9 +48,15 @@ public class ChatController {
     	return chatService.queryStream(message);
     }
 	
-	@GetMapping("chat-with-memory")
-    public ChatResponse chatWithMemory(@RequestParam(value = "message", defaultValue = "What are the 10 best beach vacation destinations for the current month?") String message) {
-    	return chatService.chatWithMemory(message);
+	@PostMapping("chat-with-memory")
+    public Answer chatWithMemory(
+    		@RequestBody Question question,
+    	    @RequestHeader(name="X_CONV_ID", defaultValue="defaultConversation") String conversationId) {
+		
+		log.debug("X_CONV_ID is: " + conversationId);
+		Answer a = chatService.chat(question.question(), conversationId);
+		log.debug("LLM response: " + a.toString());
+		return a;
     }
 	
 	@GetMapping("/vacation-structured")

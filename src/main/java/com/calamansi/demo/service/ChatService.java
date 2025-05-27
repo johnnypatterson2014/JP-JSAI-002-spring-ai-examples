@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.calamansi.demo.controller.ChatController;
 import com.calamansi.demo.integration.OpenAiIntegration;
+import com.calamansi.demo.model.Answer;
 import com.calamansi.demo.model.Itinerary;
 
 import lombok.extern.slf4j.Slf4j;
@@ -39,6 +40,10 @@ public class ChatService {
 
 	public Itinerary vacationStructured() {
 		return openAiIntegration.vacationStructured();
+	}
+
+	public Answer chat(String question, String conversationId) {
+		return openAiIntegration.chat(question, conversationId);
 	}
 
 }

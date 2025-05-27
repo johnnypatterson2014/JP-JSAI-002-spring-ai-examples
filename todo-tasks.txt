@@ -1,23 +1,37 @@
 
 
-Follow and implement the following SpringAI example projects:
+1. Follow and implement the following SpringAI example projects:
   L:\_github.java.ref\spring-ai-workshop\README.md                            *** done
   L:\_github.java.ref\spring-ai-examples\spring-ai-rag-example\README.md      *** done
   
+  
+2. Create UI to make calls to java rest api
+  - follow this tutorial:
+      https://www.jakeprins.com/blog/how-to-create-a-chatgpt-application-using-next-js-and-the-openai-api
+      https://github.com/jakeprins/nextjs-chatgpt-tutorial
+
+3. implement java based agent design patterns
+  
   L:\_github.java.ref\spring-ai-examples2\agentic-patterns\README.md
-        - read article: https://www.anthropic.com/engineering/building-effective-agents
-        - Spring AI Model Portability (implement code to switch between different LLMs)
+    - Spring AI Model Portability (implement code to switch between different LLMs)
+    - read article: https://www.anthropic.com/engineering/building-effective-agents
         - chain workflow
         - Parallelization Workflow
         - Routing Workflow
         - Orchestrator-Workers
         - Evaluator-Optimizer
-        
-  L:\_github.java.ref\spring-ai-examples2\README.md
-        - agentic patterns (see above)
-        - agents with critique/feedback for improvement: L:\_github.java.ref\spring-ai-examples2\agents\reflection\README.md
+        - agents with critique/feedback for improvement: 
+            L:\_github.java.ref\spring-ai-examples2\agents\reflection\README.md
   
-
+4. Finish bootcamp courses
+    - complete Agentic AI course and implement all examples in python and java
+      https://www.udemy.com/course/2025-bootcamp-understand-and-build-professional-ai-agents/learn/lecture/48556051#overview
+    - finish bootcamp 1:
+      https://www.udemy.com/course/bootcamp-generative-artificial-intelligence-and-llm-app-development/learn/lecture/46722387#overview  
+  
+5. Articles to read:
+  - https://piotrminkowski.com/2019/12/06/spring-boot-best-practices-for-microservices/
+  - https://docs.spring.io/spring-ai/reference/api/chatclient.html
 
 
 

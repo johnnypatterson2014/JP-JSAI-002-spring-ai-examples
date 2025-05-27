@@ -13,10 +13,14 @@ import org.springframework.stereotype.Component;
 
 import com.calamansi.demo.config.ApplicationConfig;
 import com.calamansi.demo.controller.ChatController;
+import com.calamansi.demo.model.Answer;
 import com.calamansi.demo.model.Itinerary;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
+
+import static org.springframework.ai.chat.client.advisor
+.AbstractChatMemoryAdvisor.CHAT_MEMORY_CONVERSATION_ID_KEY;
 
 @Component
 @Slf4j
@@ -179,8 +183,13 @@ public class OpenAiIntegration {
 	            .content();
 	}
 
-	public ChatResponse chatWithMemory(String message) {
-		return chatClient.prompt().user(message).call().chatResponse();
+	public Answer chat(String message, String conversationId) {
+		return chatClient.prompt()
+        .user(message)
+        .advisors(spec -> spec.param(CHAT_MEMORY_CONVERSATION_ID_KEY, conversationId))
+        .call()
+        .entity(Answer.class);
+		//return chatClient.prompt().user(message).call().chatResponse();
 	}
 	
 	public Itinerary vacationStructured() {
@@ -188,6 +197,10 @@ public class OpenAiIntegration {
 	            .user("What's a good vacation plan while I'm in Montreal CA for 4 days?")
 	            .call()
 	            .entity(Itinerary.class);
+	}
+	
+	public ChatResponse chatWithMemory(String message) {
+		return chatClient.prompt().user(message).call().chatResponse();
 	}
 
 }

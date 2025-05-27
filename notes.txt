@@ -20,7 +20,9 @@ http://localhost:8080/actuator/prometheus
 
 http://localhost:8080/jokes-with-response
 http://localhost:8080/api/chat/jokes-with-response
-http://localhost:8080/api/chat/query
+
+http://localhost:8080/api/chat/query-with-response
+
 http://localhost:8080/api/chat/query-stream
 http://localhost:8080/api/chat/chat-with-memory
 http://localhost:8080/api/chat/chat-with-memory?message=which month did I just ask about
@@ -108,5 +110,10 @@ http://localhost:3100/metrics
 
 
 
-
+{messages: [
+		{role:system,content:You are ChatGPT, a large language model trained by OpenAI.		},
+		{role:assistant,content:Hi, How can I help you today?		},
+		{role:user,content:What day is it today?		}
+	]
+}
 
