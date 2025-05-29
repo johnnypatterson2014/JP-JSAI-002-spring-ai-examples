@@ -1,0 +1,43 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    metrics:
+      enabled: 'true'
+    prometheus:
+      enabled: 'true'
+    health:
+      show-details: always
+  tracing:
+    enabled: 'true'
+    sampling:
+      probability: '1.0'
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http:
+          server:
+            requests: 'true'
+
+spring:
+  ai:
+    openai:
+      chat:
+        observations:
+          include-prompt: 'true'
+          include-completion: 'true'
+        options:
+          model: gpt-4o
+      api-key: ${OPENAI_API_KEY}
+  docker:
+    compose:
+      stop:
+        arguments: -v
+        command: down
+  application:
+    name: spring-ai-examples
+  threads:
+    virtual:
+      enabled: 'true'
