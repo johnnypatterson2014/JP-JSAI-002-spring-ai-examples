@@ -30,7 +30,6 @@ spring:
           include-completion: 'true'
         options:
           model: gpt-4o
-      api-key: ${OPENAI_API_KEY}
   docker:
     compose:
       stop:

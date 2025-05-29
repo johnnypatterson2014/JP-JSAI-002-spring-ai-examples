@@ -3,6 +3,7 @@ package com.calamansi.demo.controller;
 import java.util.List;
 
 import org.springframework.ai.chat.model.ChatResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.calamansi.demo.config.SpringAppConfig;
 import com.calamansi.demo.model.Answer;
 import com.calamansi.demo.model.Itinerary;
 import com.calamansi.demo.model.Question;
@@ -23,6 +25,9 @@ import reactor.core.publisher.Flux;
 @RequestMapping("/api/chat")
 @Slf4j
 public class ChatController {
+	
+	@Autowired
+    private SpringAppConfig springAppConfig;
 
 	private final ChatService chatService;
 
@@ -53,6 +58,8 @@ public class ChatController {
     		@RequestBody Question question,
     	    @RequestHeader(name="X_CONV_ID", defaultValue="defaultConversation") String conversationId) {
 		
+//		System.out.println("Testing spring config: name is: " + springAppConfig.getName());
+//		System.out.println("Testing spring config: secret is: " + springAppConfig.getSecret());
 		log.debug("X_CONV_ID is: " + conversationId);
 		Answer a = chatService.chat(question.question(), conversationId);
 		log.debug("LLM response: " + a.toString());
