@@ -5,12 +5,18 @@
   L:\_github.java.ref\spring-ai-examples\spring-ai-rag-example\README.md      *** done
   
   
-2. Create UI to make calls to java rest api
+2. Create UI to make calls to java rest api                                   *** done
   - follow this tutorial:
       https://www.jakeprins.com/blog/how-to-create-a-chatgpt-application-using-next-js-and-the-openai-api
-      https://github.com/jakeprins/nextjs-chatgpt-tutorial
+      https://github.com/jakeprins/nextjs-chatgpt-tutorial                    *** done
 
-3. implement java based agent design patterns
+3. Create starter template project in github (has both frontend and backend projects)   *** in progress
+  - include oauth2 spring security
+  - clean up existing project (frontend and backend)
+  - make it generic with the most common non-functional requirements
+
+
+4. implement java based agent design patterns
   
   L:\_github.java.ref\spring-ai-examples2\agentic-patterns\README.md
     - Spring AI Model Portability (implement code to switch between different LLMs)

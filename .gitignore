@@ -37,4 +37,4 @@ temp.txt
 logs/
 
 /src/main/resources/secrets.yml
-
+.metadata/
